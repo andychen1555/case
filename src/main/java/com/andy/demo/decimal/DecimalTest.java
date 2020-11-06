@@ -1,6 +1,9 @@
 package com.andy.demo.decimal;
 
+import cn.hutool.core.collection.CollUtil;
+
 import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.Objects;
 
 /**
@@ -10,9 +13,14 @@ import java.util.Objects;
  */
 public class DecimalTest {
     public static void main(String[] args) {
-        String number = "0.01";
-        BigDecimal bigDecimal = Cal.iputNumConvertPercent(new BigDecimal(number));
-        System.out.println(bigDecimal);
+//        String number = "0.01";
+//        BigDecimal bigDecimal = Cal.iputNumConvertPercent(new BigDecimal(number));
+//        System.out.println(bigDecimal);
+        ArrayList<Object> list = CollUtil.newArrayList();
+        list.add(1);
+        System.out.println(list.get(1));
+
+
     }
 
     public static class Cal {
