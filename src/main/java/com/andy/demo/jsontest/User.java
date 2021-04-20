@@ -1,6 +1,9 @@
 package com.andy.demo.jsontest;
 
 import lombok.Data;
+import org.springframework.data.annotation.Transient;
+
+import java.io.Serializable;
 
 /**
  * @author: weipeng
@@ -8,7 +11,9 @@ import lombok.Data;
  * @description:
  */
 @Data
-public class User {
-    private String name;
+public class User implements Serializable {
+    private static final long serialVersionUID = -8044712452814521055L;
+
+    private transient String name;
     private Integer age;
 }

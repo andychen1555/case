@@ -37,6 +37,33 @@ public class ListsUtil {
     }
 
     /**
+     * 将一个list均分成n个list,主要通过偏移量来实现的
+     *
+     * @param list
+     * @param step 切分步长
+     * @param <T>
+     * @return
+     */
+    public static <T> List<T> subList(List<T> list, int current, int step) {
+        if (CollUtil.isEmpty(list) || current < 1) {
+            return CollUtil.newArrayList();
+        }
+        List<T> result = new ArrayList<>();
+        int listSize = list.size();
+        int j = 0;
+        for (int i = 0; i < list.size(); i += step) {
+            if (i + step > listSize) {
+                step = listSize - i;
+            }
+            if (j == current - 1) {
+                return list.subList(i, i + step);
+            }
+            j++;
+        }
+        return result;
+    }
+
+    /**
      * 将一个list均分成n个list,主要通过偏移量来实现的. 默认切分步长: 2000
      *
      * @param list

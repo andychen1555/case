@@ -5,6 +5,7 @@ import cn.hutool.json.JSONArray;
 import cn.hutool.json.JSONConfig;
 import cn.hutool.json.JSONObject;
 import cn.hutool.json.JSONUtil;
+import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.serializer.SerializerFeature;
 import lombok.extern.slf4j.Slf4j;
 
@@ -31,7 +32,14 @@ public class JsonTest {
 //                "{\"attrName\":\"\",\"attrNameId\":200349264,\"attrValue\":\"\",\"attrValueId\":360544},\n" +
                 "{\"attrName\":\"\",\"attrNameId\":200309261,\"attrValue\":\"0000\",\"attrValueId\":\"\"}]";
 
-        splitProdProps(s);
+//        splitProdProps(s);
+
+        User user = new User();
+        user.setName("xxx");
+        user.setAge(18);
+        System.out.println(JSONUtil.toJsonStr(user));
+        System.out.println(JSON.toJSONString(user));
+
     }
     /**
      * 拆解前台提交的商品属性
